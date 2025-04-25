@@ -1170,17 +1170,6 @@ export default function TerminalPortfolio() {
                       positions, and interesting projects. Don't hesitate to
                       reach out!
                     </p>
-                    <div className="flex space-x-4">
-                      <Link
-                        href="https://calendly.com/alexchen/meeting"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-4 py-2 bg-[#5CFF5C] text-[#0C0C16] rounded-md inline-flex items-center font-bold hover:bg-[#5CFF5C]/90 transition-colors"
-                      >
-                        Schedule a Call
-                        <ArrowRight size={16} className="ml-2" />
-                      </Link>
-                    </div>
                   </div>
                 </div>
 
