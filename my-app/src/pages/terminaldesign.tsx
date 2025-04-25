@@ -572,7 +572,9 @@ export default function TerminalPortfolio() {
       <main className="pt-16">
         {/* Home Section */}
         <section
-          ref={(el) => (sectionsRef.current["home"] = el)}
+          ref={(el) => {
+            sectionsRef.current["home"] = el;
+          }}
           id="home"
           className="min-h-screen flex items-center py-20"
         >
@@ -681,7 +683,9 @@ export default function TerminalPortfolio() {
 
         {/* About Section */}
         <section
-          ref={(el) => (sectionsRef.current["about"] = el)}
+          ref={(el) => {
+            sectionsRef.current["about"] = el;
+          }}
           id="about"
           className="py-20 bg-[#1A1A2E]/30"
         >
@@ -779,7 +783,9 @@ export default function TerminalPortfolio() {
 
         {/* Projects Section */}
         <section
-          ref={(el) => (sectionsRef.current["projects"] = el)}
+          ref={(el) => {
+            sectionsRef.current["projects"] = el;
+          }}
           id="projects"
           className="py-20"
         >
@@ -949,7 +955,9 @@ export default function TerminalPortfolio() {
 
         {/* Skills Section */}
         <section
-          ref={(el) => (sectionsRef.current["skills"] = el)}
+          ref={(el) => {
+            sectionsRef.current["skills"] = el;
+          }}
           id="skills"
           className="py-20 bg-[#1A1A2E]/30"
         >
@@ -1013,7 +1021,9 @@ export default function TerminalPortfolio() {
 
         {/* Extra Section */}
         <section
-          ref={(el) => (sectionsRef.current["extra"] = el)}
+          ref={(el) => {
+            sectionsRef.current["extra"] = el;
+          }}
           id="extra"
           className="py-20"
         >
@@ -1079,7 +1089,9 @@ export default function TerminalPortfolio() {
 
         {/* Contact Section */}
         <section
-          ref={(el) => (sectionsRef.current["contact"] = el)}
+          ref={(el) => {
+            sectionsRef.current["contact"] = el;
+          }}
           id="contact"
           className="py-20 bg-[#1A1A2E]/30"
         >
