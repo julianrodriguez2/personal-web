@@ -728,8 +728,8 @@ export default function TerminalPortfolio() {
           id="about"
           className="py-20 bg-[#1A1A2E]/30"
         >
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
+          <div className="container mx-auto px-4 2xl:px-8">
+            <div className="w-full max-w-7xl mx-auto">
               <div className="mb-8">
                 <div className="inline-block bg-[#1A1A2E] text-[#5CFF5C] px-3 py-1 text-sm rounded-t-md">
                   about.md
