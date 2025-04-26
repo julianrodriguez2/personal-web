@@ -26,6 +26,7 @@ export default function TerminalPortfolio() {
   const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
   const terminalInputRef = useRef<HTMLInputElement>(null);
+  const terminalEndRef = useRef<HTMLDivElement>(null);
 
   const sections = [
     { id: "home", label: "Home", command: "cd ~" },
@@ -327,6 +328,12 @@ export default function TerminalPortfolio() {
   }, []);
 
   useEffect(() => {
+    if (terminalEndRef.current) {
+      terminalEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [terminalOutput]);
+
+  useEffect(() => {
     const cursorInterval = setInterval(() => {
       setCursorVisible((prev) => !prev);
     }, 500);
@@ -587,6 +594,9 @@ export default function TerminalPortfolio() {
                     {line}
                   </div>
                 ))}
+
+                <div ref={terminalEndRef}></div>
+
                 <form
                   onSubmit={handleTerminalCommand}
                   className="flex items-center mt-2"
@@ -617,8 +627,8 @@ export default function TerminalPortfolio() {
           id="home"
           className="min-h-screen flex items-center py-20"
         >
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
+          <div className="container mx-auto px-4 2xl:px-8">
+            <div className="w-full max-w-7xl mx-auto">
               <div className="mb-8 inline-block">
                 <div className="bg-[#1A1A2E] text-[#5CFF5C] px-3 py-1 text-sm rounded-t-md inline-block">
                   welcome.sh
@@ -672,8 +682,11 @@ export default function TerminalPortfolio() {
                     </span>
                   </div>
                   <div className="text-[#5CFF5C]">
-                    <p className="mb-2">3+ Years Professional Experience</p>
-                    <p className="mb-2">20+ Projects Completed</p>
+                    <p className="mb-2">
+                      Bachelor's Degree in Computer Science w/ Business
+                      Applications
+                    </p>
+                    <p className="mb-2">4+ Projects In Progress</p>
                     <p>Full Stack Development Expertise</p>
                   </div>
                 </div>
@@ -697,20 +710,20 @@ export default function TerminalPortfolio() {
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => scrollToSection("projects")}
-                  className="px-6 py-3 bg-[#5CFF5C] text-[#0C0C16] rounded-md inline-flex items-center font-bold hover:bg-[#5CFF5C]/90 transition-colors"
+                  className="cursor-pointer px-6 py-3 bg-[#5CFF5C] text-[#0C0C16] rounded-md inline-flex items-center font-bold hover:bg-[#5CFF5C]/90 transition-colors"
                 >
                   View Projects
                   <ArrowRight size={16} className="ml-2" />
                 </button>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="px-6 py-3 border border-[#5CFF5C] text-[#5CFF5C] rounded-md inline-flex items-center hover:bg-[#5CFF5C]/10 transition-colors"
+                  className="cursor-pointer px-6 py-3 border border-[#5CFF5C] text-[#5CFF5C] rounded-md inline-flex items-center hover:bg-[#5CFF5C]/10 transition-colors"
                 >
                   Contact Me
                 </button>
                 <button
                   onClick={() => setTerminalOpen(true)}
-                  className="px-6 py-3 border border-[#36A3FF] text-[#36A3FF] rounded-md inline-flex items-center hover:bg-[#36A3FF]/10 transition-colors"
+                  className="cursor-pointer px-6 py-3 border border-[#36A3FF] text-[#36A3FF] rounded-md inline-flex items-center hover:bg-[#36A3FF]/10 transition-colors"
                 >
                   <Terminal size={16} className="mr-2" />
                   Open Terminal
