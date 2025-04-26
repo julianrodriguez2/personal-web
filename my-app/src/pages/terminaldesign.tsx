@@ -210,22 +210,22 @@ export default function TerminalPortfolio() {
         "Software Testing and Quality Assurance",
       ],
     },
-    {
-      degree: "Full Stack Web Development Bootcamp",
-      institution: "Tech Academy",
-      period: "Summer 2022",
-      description:
-        "Intensive 12-week program focused on modern web development technologies and practices.",
-      courses: [
-        "Modern JavaScript",
-        "React & Redux",
-        "Node.js & Express",
-        "MongoDB",
-        "RESTful API Design",
-        "Authentication & Security",
-      ],
-      achievements: ["Top Student Award", "Built 5 full-stack applications"],
-    },
+    // {
+    //   degree: "Full Stack Web Development Bootcamp",
+    //   institution: "Tech Academy",
+    //   period: "Summer 2022",
+    //   description:
+    //     "Intensive 12-week program focused on modern web development technologies and practices.",
+    //   courses: [
+    //     "Modern JavaScript",
+    //     "React & Redux",
+    //     "Node.js & Express",
+    //     "MongoDB",
+    //     "RESTful API Design",
+    //     "Authentication & Security",
+    //   ],
+    //   achievements: ["Top Student Award", "Built 5 full-stack applications"],
+    // },
   ];
 
   const extraItems = [
@@ -491,7 +491,7 @@ export default function TerminalPortfolio() {
                   <li key={section.id}>
                     <button
                       onClick={() => scrollToSection(section.id)}
-                      className={`text-sm relative ${
+                      className={`text-sm relative cursor-pointer ${
                         activeSection === section.id
                           ? "text-[#5CFF5C]"
                           : "text-[#36A3FF] hover:text-[#5CFF5C]"
@@ -501,7 +501,7 @@ export default function TerminalPortfolio() {
                       {activeSection === section.id && (
                         <motion.div
                           layoutId="activeTerminalNavIndicator"
-                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#5CFF5C]"
+                          className="cursor-pointer absolute -bottom-1 left-0 right-0 h-0.5 bg-[#5CFF5C]"
                           transition={{ duration: 0.3 }}
                         />
                       )}
@@ -724,22 +724,26 @@ export default function TerminalPortfolio() {
                   </h2>
                   <div className="space-y-4 text-[#E0E0E0]">
                     <p>
-                      I'm a computer science graduate with a passion for
-                      creating elegant solutions to complex problems. My journey
-                      in software development began during my freshman year when
-                      I built my first web application.
+                      Hi, my name is Julian, and I'm pursuing a degree in
+                      Computer Science with a concentration in Business
+                      Applications at the University of California - Riverside.
+                      I'm passionate about web development, with a strong focus
+                      on both frontend and backend technologies.
                     </p>
                     <p>
-                      Since then, I've honed my skills across the entire
-                      development stack, from crafting responsive user
-                      interfaces to designing efficient backend systems and
-                      databases.
+                      I discovered my passion for software development through
+                      platforms like Codecademy and The Odin Project. Since
+                      then, I've built a variety of projects each created to
+                      solve real-world problems and streamline everyday tasks.
+                      My business coursework has strengthened my ability to
+                      design software that is not only technically sound but
+                      also user-focused and practical in real-world settings.
                     </p>
                     <p>
-                      I thrive in collaborative environments where I can
-                      contribute my technical expertise while learning from
-                      others. My approach combines solid computer science
-                      principles with modern development practices.
+                      Outside of coding, I enjoy movies, TV shows, gaming, and
+                      spending time with family and friends. I also have a
+                      passion for cooking, drawing from my previous experience
+                      working in restaurant kitchens.
                     </p>
                   </div>
                 </div>
