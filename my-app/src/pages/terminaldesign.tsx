@@ -154,6 +154,19 @@ export default function TerminalPortfolio() {
     },
   ];
 
+  const previousJobs = [
+    {
+      title: "Food Prep",
+      company: "Shogun Teppanyaki",
+      period: "2021-2023",
+      description: [
+        "Prepared fresh ingredients and assisted chefs in a fast-paced kitchen.",
+        "Maintained high standards of food safety and cleanliness.",
+        "Developed strong organization, teamwork, and time management skills.",
+      ],
+    },
+  ];
+
   const skills = {
     frontend: [
       { name: "JavaScript (ES6+)", level: 90 },
@@ -229,37 +242,40 @@ export default function TerminalPortfolio() {
   ];
 
   const extraItems = [
+    // {
+    //   title: "Coding Clubs",
+    //   description:
+    //     "Joined various clubs such as the UCR Coding Club and the coding club in high school.",
+    //   date: "2022-present",
+    //   commit: "a1b2c3d",
+    // },
     {
-      title: "Open Source Contributions",
+      title: "Certifications",
       description:
-        "Active contributor to several open-source projects including React, Next.js, and various developer tools.",
-      link: "https://github.com/yourusername",
-      date: "2021-present",
-      commit: "a1b2c3d",
-    },
-    {
-      title: "Technical Blog",
-      description:
-        "Write articles about web development, software engineering best practices, and emerging technologies.",
-      link: "https://yourblog.dev",
-      date: "2022-present",
+        "Earned several certifications from various relevant courses.",
+      date: "2023-present",
       commit: "e4f5g6h",
+      subItems: [
+        "Google Cloud Computing Foundations",
+        "The Odin Project - Full Stack JavaScript",
+      ],
     },
     {
-      title: "Hackathon Winner",
+      title: "Hackathons",
       description:
-        "First place at TechHacks 2022 for developing an accessibility tool for visually impaired users.",
-      link: "#",
-      date: "Oct 2022",
+        "Participated in multiple hackathons such as Citrushack and Cutiehack",
+      date: "April 2025, April 2024, November 2023",
       commit: "i7j8k9l",
     },
     {
-      title: "Conference Speaker",
-      description:
-        "Presented on 'Modern State Management in React' at ReactConf 2023.",
-      link: "https://reactconf.com/speakers",
-      date: "Mar 2023",
+      title: "Awards",
+      description: "Recognized for academic and language achievements.",
+      date: "June 2021-present",
       commit: "m1n2o3p",
+      subItems: [
+        "Seal of Biliteracy awarded for Spanish on high school diploma by the state of California",
+        "AP Scholar with Distinction awarded for scoring a 3 or more on at least 5 AP tests",
+      ],
     },
   ];
 
@@ -1001,8 +1017,8 @@ export default function TerminalPortfolio() {
           id="skills"
           className="py-20 bg-[#1A1A2E]/30"
         >
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+          <div className="container mx-auto px-4 2xl:px-8">
+            <div className="w-full max-w-7xl mx-auto">
               <div className="mb-8 text-center">
                 <h2 className="text-3xl font-bold mb-4 text-[#5CFF5C]">
                   <span className="text-[#36A3FF]">$</span> mkdir skills
@@ -1027,7 +1043,7 @@ export default function TerminalPortfolio() {
                         </h3>
                       </div>
                       <div className="p-6">
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 2xl:gap-6">
                           {skillList.map((skill, index) => (
                             <div
                               key={index}
@@ -1067,8 +1083,8 @@ export default function TerminalPortfolio() {
           id="extra"
           className="py-20"
         >
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+          <div className="container mx-auto px-4 2xl:px-8">
+            <div className="w-full max-w-7xl mx-auto">
               <div className="mb-8 text-center">
                 <h2 className="text-3xl font-bold mb-4 text-[#5CFF5C]">
                   <span className="text-[#36A3FF]">$</span> git log
@@ -1080,7 +1096,7 @@ export default function TerminalPortfolio() {
                 </p>
               </div>
 
-              <div className="border border-[#5CFF5C]/30 rounded-md bg-[#1A1A2E]/50 overflow-hidden">
+              <div className="border border-[#5CFF5C]/30 rounded-md bg-[#1A1A2E]/50 overflow-hidden mb-8">
                 <div className="border-b border-[#5CFF5C]/30 p-3 bg-[#1A1A2E]">
                   <h3 className="text-xl font-bold text-[#5CFF5C]">
                     <span className="text-[#36A3FF]">branch:</span>{" "}
@@ -1090,34 +1106,80 @@ export default function TerminalPortfolio() {
                 <div className="p-6">
                   <div className="space-y-4">
                     {extraItems.map((item, index) => (
-                      <div key={index} className="flex">
-                        <div className="text-[#36A3FF] mr-3 font-mono">
-                          {item.commit}
-                        </div>
-                        <div>
-                          <div className="flex items-center mb-1">
-                            <h4 className="text-[#5CFF5C] font-medium mr-2">
-                              {item.title}
-                            </h4>
-                            <span className="text-xs text-[#E0E0E0]/50">
-                              {item.date}
-                            </span>
+                      <div
+                        key={index}
+                        className="border-b border-[#5CFF5C]/10 pb-6 last:border-0 last:pb-0"
+                      >
+                        <div className="flex items-start">
+                          <div className="text-[#36A3FF] mr-3 font-mono">
+                            {item.commit}
                           </div>
-                          <p className="text-[#E0E0E0] text-sm mb-2">
-                            {item.description}
-                          </p>
-                          {item.link && (
-                            <Link
-                              href={item.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center text-[#5CFF5C] text-sm hover:underline"
-                            >
-                              View Details
-                              <ArrowRight size={12} className="ml-1" />
-                            </Link>
-                          )}
+                          <div className="flex-1">
+                            <div className="flex flex-wrap items-center mb-2">
+                              <h4 className="text-[#5CFF5C] font-medium mr-2">
+                                {item.title}
+                              </h4>
+                              <span className="text-xs text-[#E0E0E0]/50 bg-[#0C0C16] px-2 py-0.5 rounded">
+                                {item.date}
+                              </span>
+                            </div>
+                            <p className="text-[#E0E0E0] text-sm mb-3">
+                              {item.description}
+                            </p>
+                            {item.subItems && (
+                              <ul className="list-disc list-inside text-[#E0E0E0] text-sm ml-4 mt-2 space-y-1">
+                                {item.subItems.map((subItem, idx) => (
+                                  <li key={idx}>{subItem}</li>
+                                ))}
+                              </ul>
+                            )}
+                            {/* {item.link && (
+                              <Link
+                                href={item.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center text-[#5CFF5C] text-sm hover:underline"
+                              >
+                                View Details
+                                <ArrowRight size={12} className="ml-1" />
+                              </Link>
+                            )} */}
+                          </div>
                         </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="border border-[#5CFF5C]/30 rounded-md bg-[#1A1A2E]/50 overflow-hidden">
+                <div className="border-b border-[#5CFF5C]/30 p-3 bg-[#1A1A2E]">
+                  <h3 className="text-xl font-bold text-[#5CFF5C]">
+                    <span className="text-[#36A3FF]">branch</span> previous-jobs
+                  </h3>
+                </div>
+                <div className="p-6">
+                  <div className="space-y-6">
+                    {previousJobs.map((job, index) => (
+                      <div
+                        key={index}
+                        className="border-l-2 border-[#5CFF5C] pl-4 pb-6 last:pb-0"
+                      >
+                        <div className="flex justify-between items-start mb-2">
+                          <div>
+                            <h4 className="text-xl font-medium text-[#5CFF5C]">
+                              {job.title}
+                            </h4>
+                            <p className="text-[#36A3FF]">{job.company}</p>
+                          </div>
+                          <span className="text-sm text-[#E0E0E0]/70 bg-[#0C0C16] px-2 py-0.5 rounded">
+                            {job.period}
+                          </span>
+                        </div>
+                        <ul className="list-disc list-inside text-[#E0E0E0] text-sm space-y-1 mt-2">
+                          {job.description.map((point, idx) => (
+                            <li key={idx}>{point}</li>
+                          ))}
+                        </ul>
                       </div>
                     ))}
                   </div>
@@ -1135,8 +1197,8 @@ export default function TerminalPortfolio() {
           id="contact"
           className="py-20 bg-[#1A1A2E]/30"
         >
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+          <div className="container mx-auto px-4 2xl:px-8">
+            <div className="w-full max-w-7xl mx-auto">
               <div className="mb-8 text-center">
                 <h2 className="text-3xl font-bold mb-4 text-[#5CFF5C]">
                   <span className="text-[#36A3FF]">$</span> ssh julian@contact
