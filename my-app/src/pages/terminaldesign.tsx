@@ -41,8 +41,8 @@ export default function TerminalPortfolio() {
       title: "Mealmaster - A Meal Planning App",
       description:
         "A full-stack meal planner platform allowing users to plan meals, manage grocery lists, track nutrition, and monitor progress over time.",
-      github: "https://github.com/yourusername/ecommerce-platform",
-      demo: "https://ecommerce-demo.yourdomain.com",
+      github: "https://github.com/julianrodriguez2/fitness-tracker",
+      demo: "https://fitness-tracker-puce-eta.vercel.app/",
       features: [
         "User authentication and authorization",
         "Personalized meal plans based on user surveys",
@@ -61,8 +61,8 @@ export default function TerminalPortfolio() {
       title: "AI Resume Builder",
       description:
         "An AI-powered web app for generating professional resumes and cover letters, complete with real-time previews and PDF export functionality.",
-      github: "https://github.com/yourusername/task-management",
-      demo: "https://taskmanager-demo.yourdomain.com",
+      github: "https://github.com/julianrodriguez2/ai-resume-builder",
+      demo: "https://ai-resume-builder-git-main-julianrodriguez2s-projects.vercel.app/",
       features: [
         "Create resume in real-time using forms",
         "AI-driven resume improvements using Groq API",
@@ -91,13 +91,14 @@ export default function TerminalPortfolio() {
         backend: ["Unreal Engine", "C++", "RPG Maker"],
         deployment: ["N/A"],
       },
+      inProgress: true,
     },
     {
       title: "League Discord Bot",
       description:
         "A League of Legends-focused Discord bot that fetches real-time game data using the Riot Games API. Includes player rank tracking, in-house match organization, and a champion/item database.",
-      github: "https://github.com/yourusername/portfolio-generator",
-      demo: "https://portfolio-generator-demo.yourdomain.com",
+      github: "N/A",
+      demo: "N/A",
       features: [
         "Real-time game data fetching using Riot Games API",
         "Custom game functionality including matchmaking and player analytics",
@@ -109,6 +110,7 @@ export default function TerminalPortfolio() {
         backend: ["Node.js", "Discord.js", "PostgreSQL", "Riot Games API"],
         deployment: ["Vercel", "GitHub Actions"],
       },
+      inProgress: true,
     },
     {
       title: "VS Code Complexity Estimator",
@@ -128,6 +130,27 @@ export default function TerminalPortfolio() {
         backend: ["C++", "Regex Parsing"],
         deployment: ["Local VSIX Package"],
       },
+      inProgress: true,
+    },
+    {
+      title: "Job Application Dashboard",
+      description:
+        "  A web application for tracking job applications, including features for adding, editing, and deleting applications. Makes use of the AI Resume Builder project functionality from before.",
+      github: "N/A",
+      demo: "N/A",
+      features: [
+        "Create, edit, and live-preview professional resumes",
+        "AI-powered resume enhancement for grammar, tone, and keyword optimization",
+        "Export resumes to PDF with custom templates",
+        "Scrape live job listings from external job boards",
+        "Match resume skills with job requirements for personalized recommendations",
+      ],
+      tech: {
+        frontend: ["Next.js", "Tailwind CSS"],
+        backend: ["FastAPI", "Python", "Scrapy", "PostgreSQL (planned)"],
+        deployment: ["Vercel", "Render or Railway (planned)"],
+      },
+      inProgress: true,
     },
   ];
 
@@ -790,7 +813,7 @@ export default function TerminalPortfolio() {
           className="py-20"
         >
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
               <div className="mb-8 text-center">
                 <h2 className="text-3xl font-bold mb-4 text-[#5CFF5C]">
                   <span className="text-[#36A3FF]">$</span> ls -la ./projects
@@ -801,7 +824,7 @@ export default function TerminalPortfolio() {
                 </p>
               </div>
 
-              <div className="space-y-12">
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
                 {projects.map((project, index) => (
                   <div
                     key={index}
@@ -817,22 +840,26 @@ export default function TerminalPortfolio() {
                         </span>
                       </div>
                       <div className="flex space-x-2">
-                        <Link
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#E0E0E0] hover:text-[#5CFF5C]"
-                        >
-                          <Github size={16} />
-                        </Link>
-                        <Link
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#E0E0E0] hover:text-[#5CFF5C]"
-                        >
-                          <ExternalLink size={16} />
-                        </Link>
+                        {project.github !== "N/A" && (
+                          <Link
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#E0E0E0] hover:text-[#5CFF5C]"
+                          >
+                            <Github size={16} />
+                          </Link>
+                        )}
+                        {project.demo !== "N/A" && (
+                          <Link
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#E0E0E0] hover:text-[#5CFF5C]"
+                          >
+                            <ExternalLink size={16} />
+                          </Link>
+                        )}
                       </div>
                     </div>
                     <div className="p-6">
@@ -914,24 +941,33 @@ export default function TerminalPortfolio() {
                       </div>
 
                       <div className="flex flex-wrap gap-4">
-                        <Link
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-[#5CFF5C] hover:underline"
-                        >
-                          <Github size={18} className="mr-2" />
-                          View Code
-                        </Link>
-                        <Link
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center text-[#5CFF5C] hover:underline"
-                        >
-                          <ExternalLink size={18} className="mr-2" />
-                          Live Demo
-                        </Link>
+                        {project.github !== "N/A" && (
+                          <Link
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-[#5CFF5C] hover:underline"
+                          >
+                            <Github size={18} className="mr-2" />
+                            View Code
+                          </Link>
+                        )}
+                        {project.demo !== "N/A" && (
+                          <Link
+                            href={project.demo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-[#5CFF5C] hover:underline"
+                          >
+                            <ExternalLink size={18} className="mr-2" />
+                            Live Demo
+                          </Link>
+                        )}
+                        {project.inProgress && (
+                          <div className="inline-flex items-center px-3 py-1 bg-yellow-500 text-[#0C0C16] rounded-full text-xs font-bold">
+                            🚧 In Progress
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -1224,7 +1260,7 @@ export default function TerminalPortfolio() {
                         id="subject"
                         name="subject"
                         className="w-full px-4 py-2 bg-[#0C0C16] border border-[#5CFF5C]/30 rounded text-[#E0E0E0] focus:outline-none focus:border-[#5CFF5C]"
-                        placeholder="What is this regarding?"
+                        placeholder="What is your topic?"
                       />
                     </div>
                     <div>
