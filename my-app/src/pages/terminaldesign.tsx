@@ -99,7 +99,7 @@ export default function TerminalPortfolio() {
       description:
         "A League of Legends-focused Discord bot that fetches real-time game data using the Riot Games API. Includes player rank tracking, in-house match organization, and a champion/item database.",
       github: "N/A",
-      demo: "N/A",
+      demo: "https://discord-bot-sigma-two.vercel.app/",
       features: [
         "Real-time game data fetching using Riot Games API",
         "Custom game functionality including matchmaking and player analytics",
