@@ -258,16 +258,18 @@ export default function TerminalPortfolio() {
       commit: "e4f5g6h",
       subItems: [
         "Google Cloud Computing Foundations",
+        "Oracle Cloud Infrastructure Foundations 2025",
+        "Oracle AI Vector Search Professional (in progress)",
         "The Odin Project - Full Stack JavaScript",
       ],
     },
-    {
-      title: "Hackathons",
-      description:
-        "Participated in multiple hackathons such as Citrushack and Cutiehack",
-      date: "April 2025, April 2024, November 2023",
-      commit: "i7j8k9l",
-    },
+    // {
+    //   title: "Hackathons",
+    //   description:
+    //     "Participated in multiple hackathons such as Citrushack and Cutiehack",
+    //   date: "April 2025, April 2024, November 2023",
+    //   commit: "i7j8k9l",
+    // },
     {
       title: "Awards",
       description: "Recognized for academic and language achievements.",
